@@ -1,6 +1,7 @@
 package day04.solved;
 
 public abstract class Polygon {
+	
 	protected int numberOfSides;
 
 	public Polygon(int numberOfSides) throws Exception {
@@ -12,5 +13,6 @@ public abstract class Polygon {
 	}
 
 	public abstract double calculateArea();
+
 	public abstract double circumference();
 }

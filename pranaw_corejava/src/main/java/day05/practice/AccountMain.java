@@ -1,7 +1,17 @@
 package day05.practice;
 
+public class AccountMain{
+	public static void main(String[] args) {
+		Account obj;
+	}
+}
+
 //Change the below class to have setters and Getters and Constructors
-public class Account {
+ class Account{
+	 
+	String accNo;
+	double balance;
+
 	public String getAccNo() {
 		return accNo;
 	}
@@ -14,22 +24,21 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(double balance) { 
 		this.balance = balance;
 	}
-	Account(String accNo, double balance){
-		this.accNo= accNo;
+	Account(){
+	}
+	Account(String accNo, double balance) { // when a object is created a method always invoke
+		this.accNo = accNo;
 		this.balance = balance;
 	}
-
-	String accNo;
-	double balance;
 
 }
 
 //Create an implementation of the below Interface
 interface ATM {
-	boolean deposit(Account account, double amount);
+	boolean deposit(Account obj, double amount); 
 
 	boolean withdraw(Account account, double amount) throws Exception;
 
@@ -39,10 +48,10 @@ interface ATM {
 class AxisATM implements ATM {
 
 	@Override
-	public boolean deposit(Account account, double amount) {
-		account.setBalance(amount);
+	public boolean deposit(Account account, double amount) { // adding money to bank
+		account.setBalance(account.getBalance() + amount); 
 		return true;
-	}
+	} 
 
 	@Override
 	public boolean withdraw(Account account, double amount) throws Exception {
@@ -50,7 +59,7 @@ class AxisATM implements ATM {
 			throw new Exception("Your balance is below 5000");
 		} else {
 			byte charge = 5;
-			account.setBalance((account.getBalance() - amount) - charge);
+			account.setBalance(account.getBalance() - amount - charge);
 			return true;
 		}
 

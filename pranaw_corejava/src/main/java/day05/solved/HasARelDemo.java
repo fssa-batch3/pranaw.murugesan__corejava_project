@@ -9,7 +9,7 @@ class Engine {
 
 	String capacity;
 
-	public Engine(String capacity) {
+	Engine(String capacity) {
 		this.capacity = capacity;
 	}
 
