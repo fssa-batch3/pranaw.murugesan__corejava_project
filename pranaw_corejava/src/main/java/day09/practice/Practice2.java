@@ -19,14 +19,7 @@ public class Practice2 {
 }
 
 class Task implements Comparable<Task> {
-	private int priority;
-	public int getPriority() {
-		return priority;
-	}
-
-	public void setPriority(int priority) {
-		this.priority = priority;
-	}
+	
 
 	private int id;
 	private String name;

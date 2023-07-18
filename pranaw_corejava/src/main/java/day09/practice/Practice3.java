@@ -36,6 +36,9 @@ class TaskComparator implements Comparator<Task1> {
 
 class Task1 implements Comparable<Task1> {
 	private int priority;
+	private int id;
+	private String name;
+	private LocalDate deadline;
 
 	public int getPriority() {
 		return priority;
@@ -45,9 +48,7 @@ class Task1 implements Comparable<Task1> {
 		this.priority = priority;
 	}
 
-	private int id;
-	private String name;
-	private LocalDate deadline;
+	
 
 	public int getId() {
 		return id;
