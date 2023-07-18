@@ -30,7 +30,9 @@ class TaskComparator implements Comparator<Task1> {
             return o1.getDeadline().compareTo(o2.getDeadline());
         }
     }
-}
+} 
+
+
 
 class Task1 implements Comparable<Task1> {
 	private int priority;
