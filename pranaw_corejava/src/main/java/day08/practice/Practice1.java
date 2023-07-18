@@ -5,7 +5,11 @@ import java.util.HashMap;
 public class Practice1 {
 	public static void main(String[] args) {
 		String s = " Ram, Ram, Superman, Spider, hey, hello, hey, Spider";
-		String arr[] = s.split(",");
+		System.out.println(countOccurence(s));
+	}
+
+	public static HashMap<String, Integer> countOccurence(String str) {
+		String arr[] = str.split(",");
 
 		HashMap<String, Integer> countMap = new HashMap<String, Integer>();
 		for (int i = 0; i < arr.length; i++) {
@@ -17,6 +21,6 @@ public class Practice1 {
 				countMap.put(arr[i], count);
 			}
 		}
-		System.out.println(countMap);
+		return countMap;
 	}
 }

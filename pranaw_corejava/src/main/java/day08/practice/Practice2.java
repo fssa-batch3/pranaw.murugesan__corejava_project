@@ -1,8 +1,9 @@
 package day08.practice;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Practice2 {
 	public static void main(String[] args) {
@@ -21,12 +22,15 @@ public class Practice2 {
 			if (departmentEmployees.containsKey(department)) {
 				// If it exists, add the employee to the existing list
 				List<String> employees = departmentEmployees.get(department);
+
 				employees.add(employee);
+				Collections.sort(employees);
 			} else {
 				// If it doesn't exist, create a new list with the employee and add it to the
 				// HashMap
 				List<String> employees = new ArrayList<>();
 				employees.add(employee);
+				Collections.sort(employees);
 				departmentEmployees.put(department, employees);
 			}
 		}
