@@ -21,7 +21,7 @@ class EmailValidator {
 		if (matches) {
 			return true;
 		} else {
-			throw new InvalidEmailException("Invalid email format: " + emailId);
+			throw new InvalidEmailException("Invalid email format");
 		}
 	}
 }
@@ -35,7 +35,7 @@ public class Main {
 				System.out.println("Valid email: " + email);
 			}
 		} catch (InvalidEmailException e) {
-			System.out.println("Error: " + e.getMessage());
+			System.out.println(e.getMessage());
 		}
 	}
 }
