@@ -8,23 +8,16 @@ import java.time.LocalDate;
 
 public class TestPractice2Validator{
 
-    @Test
-    public void testValidTask() {
-        try {
-            Task task = new Task(1, "Coding", LocalDate.of(2023, 12, 12));
-            Assertions.assertTrue(Practice2Validator.validate(task));
-        } catch (IllegalArgumentException e) {
-        	Assertions.assertEquals("Argument is null" , e.getMessage());
-        }
-    }
-    @Test
-    public void testInvalidTask() {
-        try {
-            Assertions.assertTrue(Practice2Validator.validate(null));
-        } catch (IllegalArgumentException e) {
-        	Assertions.assertEquals("Argument is null", e.getMessage());
-        }
-    }
+	 @Test
+	    public void testValidTask() {
+	        Task task = new Task(1, "Coding", LocalDate.of(2023, 12, 12));
+	        Assertions.assertDoesNotThrow(() -> Practice2Validator.validate(task));
+	    }
+
+	    @Test
+	    public void testInvalidTask() {
+	        Assertions.assertThrows(IllegalArgumentException.class, () -> Practice2Validator.validate(null));
+	    }
 
     @Test
     public void testvalidId() {
