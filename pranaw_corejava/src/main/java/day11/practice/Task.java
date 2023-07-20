@@ -10,4 +10,7 @@ public class Task {
 		this.name = name;
 		this.status = status;
 	}
+	public Task(){
+		
+	}
 }

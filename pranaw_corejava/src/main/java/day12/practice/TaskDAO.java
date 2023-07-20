@@ -1,16 +1,10 @@
-package day12.pracrice;
+package day12.practice;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import day11.practice.DAOException;
-
-class Task {
-	int id;
-	String name;
-	String status;
-}
 
 public class TaskDAO {
 	public static Connection getConnection() {
@@ -29,7 +23,7 @@ public class TaskDAO {
 		return con;
 	}
 
-	public static void createTask(Task task) throws DAOException {
+	public static void createTask(Day12Task task) throws DAOException {
 		// Write code here to get connection
 		Connection connection = null;
 		try {
@@ -56,7 +50,7 @@ public class TaskDAO {
 		}
 	}
 
-	public void updateTask(Task task) throws DAOException {
+	public void updateTask(Day12Task task) throws DAOException {
 		// Write code here to get connection
 		Connection connection = null;
 		try {
@@ -110,7 +104,7 @@ public class TaskDAO {
 		}
 	}
 
-	public static List<Task> getAllTasks() throws DAOException {
+	public static List<Day12Task> getAllTasks() throws DAOException {
 		// Write code here to get connection
 		Connection connection = null;
 		try {
@@ -123,9 +117,9 @@ public class TaskDAO {
 			ResultSet resultSet = statement.executeQuery(query);
 
 			// Iterate over the resultset and convert it to an ArrayList
-			List<Task> tasks = new ArrayList<>();
+			List<Day12Task> tasks = new ArrayList<>();
 			while (resultSet.next()) {
-				Task task = new Task();
+				Day12Task task = new Day12Task();
 				task.id = resultSet.getInt("id");
 				task.name = resultSet.getString("name");
 				task.status = resultSet.getString("status");
