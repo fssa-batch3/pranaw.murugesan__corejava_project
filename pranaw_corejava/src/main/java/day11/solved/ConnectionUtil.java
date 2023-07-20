@@ -12,11 +12,11 @@ public class ConnectionUtil {
     public static Connection getConnection()  {
  
         Connection con = null;
-        String url = "jdbc:mysql://localhost/YOURDB";
-        String userName = "USERNAME";
-        String passWord = "PASSWORD";
+        String url = "jdbc:mysql://localhost:3306/jdbc_demo"; // url for to connect local database
+        String userName = "root";
+        String passWord = "password";
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, userName, passWord);
         } catch (Exception e) {
             e.printStackTrace();
