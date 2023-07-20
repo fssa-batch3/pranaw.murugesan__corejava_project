@@ -61,8 +61,18 @@ class UserAlreadyExistsException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
+	// Calling each super constructors for each of the types
+	
 	public UserAlreadyExistsException(String message) {
 		super(message);
+	}
+
+	public UserAlreadyExistsException(Throwable te) {
+		super(te);
+	}
+
+	public UserAlreadyExistsException(String msg, Throwable te) {
+		super(msg, te);
 	}
 }
 
